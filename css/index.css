@@ -1,0 +1,259 @@
+@import url("https://cdn.jsdelivr.net/gh/GoCloudHub/font-amazon-ember/fonts/amazonember/amazonember.css");
+
+:root {
+  --background: #222f3f;
+  --text-color: rgb(230, 230, 230);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+  font-family: "Amazon Ember", Arial, monospace;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 30px;
+}
+
+/** Barra do topo **/
+.top-bar {
+  position: absolute;
+  z-index: 4;
+  width: 100vw;
+  padding-bottom: 100px;
+  background: linear-gradient(to bottom, #222f3fb3, #222f3f80, #222f3f00);
+}
+
+.top-bar .container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.top-bar .logo {
+  width: 200px;
+  margin-right: 70px;
+}
+
+.top-bar .logo img {
+  width: 100%;
+}
+
+.top-bar nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+}
+
+.top-bar nav a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 5px;
+  color: var(--text-color);
+}
+
+
+/** carrosel de series **/
+.featured {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.featured .swiper-pagination {
+  left: 30px;
+}
+
+.featured .swiper-pagination-bullet {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.603);
+}
+
+.featured .swiper-pagination-bullet-active {
+  background-color: white;
+  transform: scale(1.5);
+}
+
+.featured .swiper-slide > * {
+  width: 100vw;
+  height: 100vh;
+}
+
+.featured .swiper-slide::before {
+  content: '';
+  background: linear-gradient(70deg, #222f3ffd 329px, #222f3f00);
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.featured .swiper-slide img {
+  object-fit: cover;
+}
+
+.featured .swiper-slide .serie-info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 40vw;
+  margin-left: 100px;
+  z-index: 3;
+}
+
+.featured .swiper-slide .serie-info .logo {
+  width: 300px;
+}
+
+.featured .swiper-slide .serie-info .desc {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.featured .swiper-slide .serie-info .botoes {
+  padding: 20px 0;
+}
+
+.btn {
+  border: none;
+  color: white;
+  font-weight: bold;
+  margin-right: 10px;
+  width: max-content;
+  padding: 15px 50px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  background-color: #00a8e1;
+}
+
+.btn i {
+  margin-right: 10px;
+}
+
+.btn.secondary {
+  background-color: #3d4753;
+}
+
+/** **/
+.recommended {
+  margin-top: -20vh;
+  position: absolute;
+  z-index: 3;
+  padding-top: 5vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #222f3f00, #222f3f 170px);
+}
+
+.recommended h2 {
+  margin-bottom: 20px;
+}
+
+.recommended-list .swiper-slide {
+  width: 20vw;
+  height: 30vw;
+  min-width: 275px;
+  min-height: 412px;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: scale(0.95);
+  transform-origin: center top;
+  transition: .3s;
+  border-width: 5px;
+  border-color: white;
+  position: relative;
+}
+
+.recommended-list .swiper-slide:hover {
+  transform: scale(1);
+  z-index: 2;
+  border: 3px solid #00a8e1;
+}
+
+.recommended-list .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recommended-list .swiper-slide.prime::before {
+  color: #222f3f;
+  content: 'prime';
+  background-color: #00a8e1;
+  border: 3px solid #222f3f;
+  position: absolute;
+  width: 60px;
+  font-size: 14px;
+  border-top: none;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 4px;
+  transform: scale(0.9);
+  transform-origin: center top;
+  border-radius: 0 0 10px 10px;
+}
+
+.recommended-list .serie-info {
+  position: absolute;
+  margin-top: -100px;
+  z-index: 3;
+  background: linear-gradient(to bottom, #222f3f00, #222f3f 10%);
+  width: 100%;
+  height: 200px;
+  padding: 30px 20px;
+  opacity: 0;
+  transition: .3s;
+}
+
+.recommended-list .serie-info h3 {
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recommended-list .serie-info p {
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  margin-bottom: 20px;
+}
+
+.recommended-list .swiper-slide:hover .serie-info {
+  margin-top: -200px;
+  opacity: 1;
+}
+
+.recommended-list .serie-info .btn {
+  font-size: 11px;
+  padding: 10px 20px;
+}
+
+.recommended-list .serie-info .btn.play {
+  box-sizing: content-box;
+  padding: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recommended-list .serie-info .btn.play i {
+  margin-right: 0;
+  margin-top: -2px;
+}

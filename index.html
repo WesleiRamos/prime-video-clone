@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Video</title>
+  <script src="https://kit.fontawesome.com/79d99a9388.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <template id="featured-serie-item">
+    <div class="swiper-slide">
+      <div class="serie-info">
+        <img class="logo" alt="Logo da série">
+        <p class="desc"></p>
+        <div class="botoes">
+          <button class="btn">
+            <i class="fa-solid fa-play"></i>
+            Assistir
+          </button>
+          <button class="btn secondary">
+            <i class="fa-solid fa-info"></i>
+            Mais informações
+          </button>
+        </div>
+      </div>
+
+      <img class="cover-image" alt="Imagem de capa da série">
+    </div>
+  </template>
+
+  <template id="recommended-serie-item">
+    <div class="swiper-slide">
+      <img class="poster">
+
+      <div class="serie-info">
+        <h3 class="titulo"></h3>
+        <p class="desc"></p>
+        <button class="btn play">
+          <i class="fa-solid fa-play"></i>
+        </button>
+
+        <button class="btn secondary">
+          <i class="fa-solid fa-plus"></i>
+          Adicionar a lista
+        </button>
+      </div>
+    </div>
+  </template>
+
+  <header class="top-bar">
+    <div class="container">
+      <div class="logo">
+        <img src="assets/img/logo.svg" alt="Logo">
+      </div>
+  
+      <nav>
+        <a href="#">Início</a>
+        <a href="#">Loja</a>
+        <a href="#">Canais</a>
+        <a href="#">Categorias</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="swiper featured">
+    <div class="swiper-wrapper"></div>
+    <div class="swiper-pagination featured-pagination"></div>
+  </section>
+
+  <section class="recommended">
+    <div class="container">
+      <h2>Recomendados pra você</h2>
+
+      <div class="swiper recommended-list">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/swiper-bundle.min.js"></script>
+  <script src="./js/index.js" type="module"></script>
+</body>
+</html>
